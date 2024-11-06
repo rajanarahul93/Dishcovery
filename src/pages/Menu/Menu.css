@@ -1,0 +1,81 @@
+#categoryContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #111;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.food-box {
+    cursor: pointer;
+    border: 1px solid #333;
+    width: 18rem;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.food-box:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+    background-color: #222;
+}
+
+.food-box img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.3s ease;
+}
+
+.food-box:hover img {
+    transform: scale(1.1);
+}
+
+.food-box p {
+    position: absolute;
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    width: 100%;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    border-radius: 0 0 10px 10px;
+}
+
+.food-box:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.food-box p span {
+    display: block;
+    font-size: 14px;
+    color: #aaa;
+    transition: color 0.3s ease;
+}
+
+.food-box:hover p span {
+    color: #f5f5f5;
+}
+
+@media (max-width: 568px) {
+    .food-box {
+        width: 9rem;
+    }
+    .food-box p {
+        font-size: 16px;
+    }
+}
